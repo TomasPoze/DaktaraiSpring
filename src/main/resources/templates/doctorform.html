@@ -1,0 +1,17 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Eshop - form</title>
+</head>
+<body>
+<h1>Produkto forma:</h1>
+<form th:action="@{/doctors/doctor}" method="post" th:object="${doctor}">
+    <input type="hidden" th:field="*{id}"/>
+
+
+    <p>Vardas: <input type="text" th:field="*{docname}"/></p>
+    <p>Regionas: <input type="text" th:field="*{region}"/></p>
+    <p>Specilizacija: <input type="text" th:field="*{spec}"/></p>
+    <p> <input type="submit" th:value="${doctor.id != null ? 'Redaguoti' : 'Kurti'}"/> </p>
+</form>
+</body>
+</html>

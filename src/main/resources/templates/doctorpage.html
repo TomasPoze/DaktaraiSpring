@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor - info</title>
+</head>
+<body>
+<h1 th:text="${doctor.docname}"></h1>
+<p th:text="${doctor.id}"></p>
+<p th:text="${doctor.region}"></p>
+<p th:text="${doctor.spec}"></p>
+<p> <a th:href="@{/doctors/doctor/{id}(id=${doctor.id})}">Redaguoti</a> </p>
+<p> <a th:href="@{/doctors/doctor/{id}/delete(id=${doctor.id})}">Ištrinti</a> </p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor list</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Vardas</td>
+        <td>Regionas</td>
+        <td>Specializacija</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="doctor : ${doctors}">
+        <td th:text="${doctor.docname}"></td>
+        <td th:text="${doctor.region}"></td>
+        <td th:text="${doctor.spec}"></td>
+        <td>
+            <a th:href="@{/doctors/{id}(id=${doctor.id})}">
+                Plačiau
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/doctors/doctor}">
+    Kurti nauja
+</a>
+</body>
+</html>
